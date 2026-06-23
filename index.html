@@ -1,464 +1,878 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>TWS Portfolio</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top">Train With Shubham</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
-                    </ul>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="FONARA08 - Premium iPhones, MacBooks and Accessories Store" />
+    <meta name="author" content="FONARA08" />
+    <title>FONARA08 - Mobile & Accessories Store</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&family=Lato:400,700&family=Poppins:400,500,600,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #mainNav {
+            background-color: rgba(15, 15, 15, 0.95) !important;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4af37 !important;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .masthead {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .masthead::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .masthead > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .masthead-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-top: 30px;
+            letter-spacing: 3px;
+            color: #d4af37;
+            text-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .masthead-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.4), inset 0 0 50px rgba(212, 175, 55, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .masthead-subheading {
+            font-size: 1.8rem;
+            margin-top: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: #b0b0b0;
+        }
+
+        .portfolio-item {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            height: 300px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.4);
+            border-color: #d4af37;
+        }
+
+        .portfolio-item img {
+            transition: transform 0.4s ease;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .portfolio-item-caption {
+            background: rgba(212, 175, 55, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .page-section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            color: #d4af37;
+            text-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .divider-custom {
+            margin: 2rem 0 3rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .divider-custom .divider-custom-line {
+            width: 100%;
+            max-width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        .divider-custom .divider-custom-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37 0%, #f0d090 100%);
+            color: #0a0a0a;
+            margin: 0 1.5rem;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .divider-light .divider-custom-line {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+
+        .divider-light .divider-custom-icon {
+            background: rgba(255,255,255,0.2);
+            color: #d4af37;
+        }
+
+        .bg-primary {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #0a0a0a 100%) !important;
+            border-top: 2px solid #d4af37;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37 0%, #f0d090 100%) !important;
+            border-color: #d4af37 !important;
+            color: #0a0a0a !important;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-xl {
+            padding: 1.5rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .portfolio {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 5rem 0 0;
+            border-top: 2px solid #d4af37;
+        }
+
+        .copyright {
+            background-color: #000000;
+            border-top: 1px solid #d4af37;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .product-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin: 1.5rem 0;
+            text-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .product-description {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .btn-outline-light {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #d4af37;
+            color: #0a0a0a;
+            border-color: #d4af37;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border: 1px solid #d4af37;
+            color: white;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+        .form-control {
+            background-color: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255,255,255,0.1);
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-floating>label {
+            color: #b0b0b0;
+        }
+
+        .text-secondary {
+            color: #d4af37 !important;
+        }
+
+        h4 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        h5 {
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .btn-social {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background-color: #d4af37 !important;
+            color: #0a0a0a !important;
+            transform: scale(1.2);
+        }
+
+        .text-white {
+            color: #ffffff !important;
+        }
+
+        @media (max-width: 768px) {
+            .masthead-heading {
+                font-size: 2.8rem;
+            }
+
+            .masthead-subheading {
+                font-size: 1.2rem;
+            }
+
+            .page-section-heading {
+                font-size: 2.5rem;
+            }
+
+            .portfolio-item {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">
+                <i class="fas fa-mobile-alt me-2"></i>FONARA08
+            </a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#products">Products</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <div style="font-size: 120px; margin-bottom: 2rem; animation: float 3s ease-in-out infinite; color: #d4af37;">
+                <i class="fas fa-crown"></i>
+            </div>
+            <h1 class="masthead-heading text-uppercase mb-0">FONARA08</h1>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p class="masthead-subheading font-weight-light mb-0">Premium iPhones • MacBooks • Accessories</p>
+            <p style="margin-top: 2rem; font-size: 1.1rem; color: rgba(212, 175, 55, 0.9);">
+                <i class="fas fa-shield-alt me-2"></i>Authentic • Certified • Trusted Since 2024
+            </p>
+        </div>
+    </header>
+
+    <!-- Products Section-->
+    <section class="page-section portfolio" id="products">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our Products</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- iPhone Products -->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#productModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=500&h=500&fit=crop" alt="iPhone Collection" />
+                    </div>
+                </div>
+
+                <!-- MacBook Products -->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#productModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&h=500&fit=crop" alt="MacBook Collection" />
+                    </div>
+                </div>
+
+                <!-- Chargers & Cables -->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#productModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://images.unsplash.com/photo-1591618264537-b7e73af1fbab?w=500&h=500&fit=crop" alt="Chargers & Cables" />
+                    </div>
+                </div>
+
+                <!-- Screen Protectors & Cases -->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#productModal4">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&h=500&fit=crop" alt="Screen Protectors & Cases" />
+                    </div>
+                </div>
+
+                <!-- Headphones & Audio -->
+                <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#productModal5">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop" alt="Headphones & Audio" />
+                    </div>
+                </div>
+
+                <!-- Power Banks -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#productModal6">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&h=500&fit=crop" alt="Power Banks" />
+                    </div>
                 </div>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">
-                    <a href="https://bit.ly/tws-junoon" style="text-decoration: none; color: inherit;">
-                        DevOps (Batch 9)
-                    </a>
-                </h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Engineer - Trainer - Learner</p>
+        </div>
+    </section>
+
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-white">About FONARA08</h2>
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">DevOps Junoon (Batch 8) <br> Starts October 5th (Weekends 9 A.M to 12 P.M)  <br> Covering A-Z of DevOps.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">See you in the Live Sessions. </p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://bit.ly/tws-junoon">
-                        <i class="fas fa-download me-2"></i>
-                        Checkout Junoon!
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
+
+            <div class="row">
+                <div class="col-lg-5 ms-auto mb-5 mb-lg-0">
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1.5rem;">
+                        <p class="lead">
+                            <i class="fas fa-check-circle me-2" style="color: #d4af37;"></i><strong>100% Authentic Products</strong>
+                            <br><small>Every item is verified and sourced directly from official channels with complete authenticity guarantee.</small>
                         </p>
                     </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1.5rem;">
+                        <p class="lead">
+                            <i class="fas fa-check-circle me-2" style="color: #d4af37;"></i><strong>Best Market Prices</strong>
+                            <br><small>Competitive pricing with price match guarantee on all premium technology products.</small>
+                        </p>
                     </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1.5rem;">
+                        <p class="lead">
+                            <i class="fas fa-check-circle me-2" style="color: #d4af37;"></i><strong>Comprehensive Warranty</strong>
+                            <br><small>Complete manufacturer warranty plus extended protection options available.</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-5 me-auto">
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1.5rem;">
+                        <p class="lead">
+                            <i class="fas fa-check-circle me-2" style="color: #d4af37;"></i><strong>Express Delivery</strong>
+                            <br><small>Fast and secure shipping across Pakistan with real-time tracking on all orders.</small>
+                        </p>
+                    </div>
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1.5rem;">
+                        <p class="lead">
+                            <i class="fas fa-check-circle me-2" style="color: #d4af37;"></i><strong>30-Day Easy Returns</strong>
+                            <br><small>Hassle-free returns and exchange policy with full refund guarantee.</small>
+                        </p>
+                    </div>
+                    <div style="background: rgba(212, 175, 55, 0.1); padding: 2rem; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 1.5rem;">
+                        <p class="lead">
+                            <i class="fas fa-check-circle me-2" style="color: #d4af37;"></i><strong>Expert Guidance</strong>
+                            <br><small>Personalized consultation from tech experts to help you choose the perfect product.</small>
                         </p>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; TrainWithShubham.com 2024</small></div>
+
+            <div class="text-center mt-4">
+                <a class="btn btn-xl btn-outline-light" href="#contact">
+                    <i class="fas fa-envelope me-2"></i>
+                    Get in Touch
+                </a>
+            </div>
         </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+    </section>
+
+    <!-- Contact Section-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7">
+                    <form id="contactForm">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+                            <label for="name">Full Name</label>
                         </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                            <label for="email">Email Address</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" required />
+                            <label for="phone">Phone Number</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" placeholder="Enter your message..." style="height: 10rem" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+
+                        <button class="btn btn-primary btn-xl" type="submit">
+                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Quick Contact Info -->
+            <div class="row mt-5">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-phone fa-3x mb-3" style="color: #d4af37;"></i>
+                    <h5>Phone</h5>
+                    <p style="font-size: 1.1rem;">+92 310 6161829</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-envelope fa-3x mb-3" style="color: #d4af37;"></i>
+                    <h5>Email</h5>
+                    <p style="font-size: 1.1rem;">info@fonara08.com</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-map-marker-alt fa-3x mb-3" style="color: #d4af37;"></i>
+                    <h5>Location</h5>
+                    <p style="font-size: 1.1rem;">Rawalpindi, Punjab, Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer text-center text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">FONARA08</h4>
+                    <p class="lead mb-0">Your trusted source for premium iPhones, MacBooks and accessories.</p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Follow Us</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-tiktok"></i></a>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">Hours</h4>
+                    <p class="lead mb-0">
+                        Monday - Friday: 10 AM - 8 PM
+                        <br>Saturday - Sunday: 11 AM - 7 PM
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; FONARA08 2024. All Rights Reserved.</small></div>
+    </div>
+
+    <!-- Product Modals -->
+    <!-- Product Modal 1: iPhones -->
+    <div class="modal fade" id="productModal1" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">iPhone Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?w=400&h=400&fit=crop" alt="iPhone Collection" style="border-radius: 15px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                        <h2 class="text-secondary text-uppercase mb-3">Latest iPhones</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div>
+                        <p class="product-description mb-4">
+                            Experience the pinnacle of mobile innovation with our exclusive iPhone collection. Featuring cutting-edge technology, stunning displays, and exceptional camera systems. Each device is authenticated and comes with complete warranty coverage.
+                        </p>
+                        <div class="product-price">Starting from PKR 89,999</div>
+                        <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                            <p class="mb-0"><strong>Available Models:</strong><br>iPhone 15 • iPhone 15 Pro • iPhone 15 Pro Max • iPhone 14 • iPhone 13</p>
+                        </div>
+                        <p class="mb-4"><i class="fas fa-check" style="color: #d4af37;"></i> 100% Genuine • <i class="fas fa-check" style="color: #d4af37;"></i> Full Warranty • <i class="fas fa-check" style="color: #d4af37;"></i> Free Delivery</p>
+                        <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+    </div>
+
+    <!-- Product Modal 2: MacBooks -->
+    <div class="modal fade" id="productModal2" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">MacBook Collection</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop" alt="MacBook Collection" style="border-radius: 15px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                        <h2 class="text-secondary text-uppercase mb-3">MacBook Pro & Air</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
                         </div>
+                        <p class="product-description mb-4">
+                            Experience unparalleled performance with our exclusive MacBook collection. Featuring the latest M-series chips, Liquid Retina displays, and premium build quality for professionals and creators.
+                        </p>
+                        <div class="product-price">Starting from PKR 189,999</div>
+                        <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                            <p class="mb-0"><strong>Available Models:</strong><br>MacBook Air M2 • MacBook Air M3 • MacBook Pro 14" • MacBook Pro 16"</p>
+                        </div>
+                        <p class="mb-4"><i class="fas fa-check" style="color: #d4af37;"></i> Original Sealed • <i class="fas fa-check" style="color: #d4af37;"></i> Apple Warranty • <i class="fas fa-check" style="color: #d4af37;"></i> Free Setup</p>
+                        <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+    </div>
+
+    <!-- Product Modal 3: Chargers & Cables -->
+    <div class="modal fade" id="productModal3" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Chargers & Cables</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <img src="https://images.unsplash.com/photo-1591618264537-b7e73af1fbab?w=400&h=400&fit=crop" alt="Chargers & Cables" style="border-radius: 15px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                        <h2 class="text-secondary text-uppercase mb-3">Charging Solutions</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
                         </div>
+                        <p class="product-description mb-4">
+                            Fast charging technology meets premium quality. Original Apple chargers and MagSafe accessories with advanced safety features for all your devices.
+                        </p>
+                        <div class="product-price">Starting from PKR 1,999</div>
+                        <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                            <p class="mb-0"><strong>Products Available:</strong><br>20W • 35W • 65W • 67W Fast Chargers • USB-C & Lightning Cables • MagSafe Chargers</p>
+                        </div>
+                        <p class="mb-4"><i class="fas fa-check" style="color: #d4af37;"></i> Original Apple • <i class="fas fa-check" style="color: #d4af37;"></i> Certified Safe • <i class="fas fa-check" style="color: #d4af37;"></i> 1 Year Warranty</p>
+                        <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+    </div>
+
+    <!-- Product Modal 4: Screen Protectors & Cases -->
+    <div class="modal fade" id="productModal4" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Screen Protectors & Cases</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop" alt="Cases & Protectors" style="border-radius: 15px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                        <h2 class="text-secondary text-uppercase mb-3">Protection & Style</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
                         </div>
+                        <p class="product-description mb-4">
+                            Protect your investment in premium style. Military-grade protection with premium materials designed for maximum durability and aesthetic appeal.
+                        </p>
+                        <div class="product-price">Starting from PKR 999</div>
+                        <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                            <p class="mb-0"><strong>Products Available:</strong><br>Premium Tempered Glass • Leather Cases • Carbon Fiber Cases • Protective Sleeves • PopSocket Holders</p>
+                        </div>
+                        <p class="mb-4"><i class="fas fa-check" style="color: #d4af37;"></i> Military Grade • <i class="fas fa-check" style="color: #d4af37;"></i> Precision Fit • <i class="fas fa-check" style="color: #d4af37;"></i> Lifetime Guarantee</p>
+                        <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+    </div>
+
+    <!-- Product Modal 5: Headphones & Audio -->
+    <div class="modal fade" id="productModal5" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Headphones & Audio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Headphones & Audio" style="border-radius: 15px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                        <h2 class="text-secondary text-uppercase mb-3">Premium Audio Experience</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
                         </div>
+                        <p class="product-description mb-4">
+                            Immerse yourself in crystal-clear sound with our premium audio collection. Featuring noise cancellation, spatial audio, and premium acoustics for the ultimate listening experience.
+                        </p>
+                        <div class="product-price">Starting from PKR 4,999</div>
+                        <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                            <p class="mb-0"><strong>Products Available:</strong><br>AirPods Pro • AirPods Max • Beats Studio Pro • Beats Solo • Premium Wireless Earbuds</p>
+                        </div>
+                        <p class="mb-4"><i class="fas fa-check" style="color: #d4af37;"></i> Active Noise Cancel • <i class="fas fa-check" style="color: #d4af37;"></i> Spatial Audio • <i class="fas fa-check" style="color: #d4af37;"></i> AppleCare Ready</p>
+                        <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
+    </div>
+
+    <!-- Product Modal 6: Power Banks -->
+    <div class="modal fade" id="productModal6" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Power Banks</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=400&fit=crop" alt="Power Banks" style="border-radius: 15px; box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3); margin-bottom: 2rem;">
+                        <h2 class="text-secondary text-uppercase mb-3">Power Solutions</h2>
+                        <div class="divider-custom">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                            <div class="divider-custom-line"></div>
                         </div>
+                        <p class="product-description mb-4">
+                            Stay powered all day with our premium power bank collection. High-capacity batteries with ultra-fast charging technology in sleek, compact designs.
+                        </p>
+                        <div class="product-price">Starting from PKR 2,999</div>
+                        <div style="background: rgba(212, 175, 55, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                            <p class="mb-0"><strong>Products Available:</strong><br>10000mAh • 20000mAh • 30000mAh • Wireless Charging Power Banks • USB-C & Lightning Support</p>
+                        </div>
+                        <p class="mb-4"><i class="fas fa-check" style="color: #d4af37;"></i> Fast Charging • <i class="fas fa-check" style="color: #d4af37;"></i> Wireless Support • <i class="fas fa-check" style="color: #d4af37;"></i> 2 Year Warranty</p>
+                        <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fas fa-times me-2"></i>Close</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Simple Form Handler -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if(name && email && phone && message) {
+                alert('Thank you for reaching out! We will contact you soon.');
+                this.reset();
+            } else {
+                alert('Please fill all fields.');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({behavior: 'smooth', block: 'start'});
+                }
+            });
+        });
+    </script>
+</body>
 </html>
